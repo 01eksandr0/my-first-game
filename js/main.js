@@ -2,35 +2,40 @@ const boxs = document.querySelector(".my-section");
 let totalFunction = 0;
 let first, second;
 boxs.addEventListener("click", (e) => {
-  if (totalFunction < 3) {
-    if (e.target.nodeName === "DIV") {
-      e.target.classList.remove("normal");
+  if (e.target.nodeName === "DIV") {
+    if (totalFunction === 0) {
       e.target.classList.add("flip");
-      const sss = () => (e.target.lastElementChild.style.display = "block");
-      setTimeout(sss, 100);
-      if (totalFunction === 0) {
-        first = e.target;
-      }
-      if (totalFunction === 1) {
-        second = e.target;
-      }
-      totalFunction++;
-      if (
-        totalFunction === 2 &&
-        first.lastElementChild.lastElementChild.src ===
-          second.lastElementChild.lastElementChild.src
-      ) {
-        totalFunction = 0;
-      } else if (totalFunction === 2) {
-        first.classList.remove("flip");
-        first.classList.add("normal");
-        first.lastElementChild.lastElementChild.style.display = "none";
-        second.classList.remove("flip");
-        second.classList.add("normal");
-        second.lastElementChild.lastElementChild.style.display = "none";
-        totalFunction = 0;
-      }
+      const fnAddActive = () =>
+        (e.target.lastElementChild.style.display = "block");
+      setTimeout(fnAddActive, 100);
+      first = e.target;
+      totalFunction += 1;
+    } else if (totalFunction === 1) {
+      e.target.classList.add("flip");
+      const fnAddActive = () =>
+        (e.target.lastElementChild.style.display = "block");
+      setTimeout(fnAddActive, 100);
+      second = e.target;
+      totalFunction += 1;
     }
-  } else {
+    if (
+      first.lastElementChild.lastElementChild.src ===
+      second.lastElementChild.lastElementChild.src
+    ) {
+      totalFunction = 0;
+      first = "";
+      second = "";
+    } else if (totalFunction === 2 && first !== second) {
+      const fnRemove = () => {
+        first.classList.remove("flip");
+        first.lastElementChild.style.display = "none";
+        second.classList.remove("flip");
+        second.lastElementChild.style.display = "none";
+        totalFunction = 0;
+        first = "";
+        second = "";
+      };
+      setTimeout(fnRemove, 800);
+    }
   }
 });
