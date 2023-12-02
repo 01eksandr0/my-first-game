@@ -48,3 +48,8 @@ body {
 .active {
   display: block;
 }
+@media screen and (max-width: 450px) {
+  .my-section {
+    width: 400px;
+  }
+}
