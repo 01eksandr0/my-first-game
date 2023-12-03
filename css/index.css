@@ -4,7 +4,8 @@ body {
   background-position: center;
 }
 /* ====================================================================== */
-.my-section {
+.my-section,
+.my-section-two {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -54,10 +55,12 @@ body {
 .is-sicret {
   opacity: 0;
   pointer-events: none;
+  position: absolute;
 }
 /* ================================================================= */
 /* level 1 */
-.level-one {
+.level-one,
+.level-two {
   margin: 10px auto;
   display: flex;
   flex-direction: column;
