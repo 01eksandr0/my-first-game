@@ -2,7 +2,7 @@ const boxs = document.querySelector(".my-section");
 let totalFunction = 0;
 let first, second;
 boxs.addEventListener("click", (e) => {
-  if (e.target.nodeName === "DIV") {
+  if (e.target.classList.contains("cart")) {
     if (totalFunction === 0) {
       e.target.classList.add("flip");
       const fnAddActive = () =>

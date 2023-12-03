@@ -1,19 +1,22 @@
 body {
   background-color: bisque;
+  background-image: url(../img/back-img.jpg);
+  background-position: center;
 }
+/* ====================================================================== */
 .my-section {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
   gap: 10px;
-  margin: 40px auto;
-  width: 440px;
+  margin: 0px auto;
+  width: 230px;
   perspective: 500px;
 }
 .cart {
-  width: 100px;
-  height: 160px;
+  width: 70px;
+  height: 120px;
   background-color: black;
   display: flex;
   align-items: center;
@@ -48,8 +51,20 @@ body {
 .active {
   display: block;
 }
-@media screen and (max-width: 450px) {
-  .my-section {
-    width: 400px;
-  }
+.is-sicret {
+  opacity: 0;
+  pointer-events: none;
+}
+/* ================================================================= */
+/* level 1 */
+.level-one {
+  margin: 10px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40;
+}
+.level-one-title {
+  font-size: 30px;
+  color: #fafafa;
 }
