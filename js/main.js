@@ -2,6 +2,8 @@ const boxs = document.querySelector(".my-section");
 const boxTwo = document.querySelector(".my-section-two");
 const levelOne = document.querySelector(".level-one");
 const menuLevelTwo = document.querySelector(".menu-level-two");
+const levelTwo = document.querySelector(".level-two");
+const godbay = document.querySelector(".goodbay");
 let totalFunction = 0;
 let totalSum = 0;
 let first, second;
@@ -96,5 +98,16 @@ boxTwo.addEventListener("click", (e) => {
       };
       setTimeout(fnRemove, 800);
     }
+  }
+  if (totalSum === 6) {
+    totalSum = 0;
+    const fnNextLevel = () => {
+      levelTwo.classList.toggle("is-sicret");
+    };
+    setTimeout(fnNextLevel, 500);
+    const fnNextLevelMenu = () => {
+      godbay.classList.toggle("is-sicret");
+    };
+    setTimeout(fnNextLevelMenu, 1000);
   }
 });
